@@ -1,35 +1,36 @@
 "use client";
-
 import { motion } from "framer-motion";
+import HeroGrid from "./HeroGrid";
 import styles from "@/styles/Hero.module.scss";
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
+      <HeroGrid />
+      
       <div className={styles.container}>
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className={styles.content}
         >
-          Vakmanschap dat groeit.
-        </motion.h1>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        >
-          ANB Tuinwerken: Uw partner voor boomverzorging en totale tuinrenovatie in regio Gent.
-        </motion.p>
+          {/* HET LOGO IS TERUG */}
+          <div className={styles.logoWrapper}>
+            <img src="/anb-logo.png" alt="ANB Tuinwerken Logo" />
+          </div>
 
-        <motion.div 
-          className={styles.actions}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <button className={styles.buttonPrimary}>Ontdek onze diensten</button>
+          <h1 className={styles.title}>Vakmanschap dat groeit</h1>
+          
+          <p className={styles.description}>
+            ANB Tuinwerken: Uw partner voor boomverzorging en totale tuinrenovatie in regio Gent.
+          </p>
+          
+          <div className={styles.actions}>
+            <button className={styles.buttonPrimary}>
+              Ontdek onze diensten
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
