@@ -1,0 +1,67 @@
+@use "@/styles/variables" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: $transition-smooth;
+
+  &.scrolled {
+    padding: 1rem 0;
+    background: rgba(253, 253, 251, 0.8); // Je $color-bg met transparantie
+    backdrop-filter: blur(10px); // Het 'frosted glass' effect
+    border-bottom: 1px solid rgba(26, 36, 33, 0.05);
+  }
+
+  .navContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    color: $color-primary;
+    font-weight: 700;
+    
+    span {
+      font-weight: 400;
+      color: $color-accent;
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $color-text;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-accent;
+      }
+
+      &.cta {
+        background-color: $color-primary;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 4px;
+        
+        &:hover {
+          filter: brightness(1.2);
+        }
+      }
+    }
+  }
+}
