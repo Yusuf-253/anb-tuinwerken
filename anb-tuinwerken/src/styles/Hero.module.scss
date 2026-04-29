@@ -1,0 +1,49 @@
+@use "@/styles/variables" as *;
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $color-bg; // Die zachte off-white
+  padding: 0 20px;
+
+  .container {
+    max-width: 800px;
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem); // Past zich aan op mobiel
+      font-family: $font-serif;
+      color: $color-primary;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $color-text;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttonPrimary {
+      background-color: $color-accent;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $transition-smooth;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        filter: brightness(1.1);
+      }
+    }
+  }
+}

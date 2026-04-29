@@ -1,0 +1,27 @@
+@use "@/styles/variables" as *;
+
+@import "../styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-main;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: $font-serif;
+  color: $color-primary;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
