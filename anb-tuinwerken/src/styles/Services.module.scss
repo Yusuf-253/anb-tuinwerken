@@ -1,0 +1,58 @@
+@use "@/styles/variables" as *;
+
+.services {
+  padding: 100px 20px;
+  background-color: $color-white;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $color-accent;
+      font-weight: 500;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: $color-bg;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    transition: $transition-smooth;
+    border: 1px solid rgba(0,0,0,0.03);
+
+    .icon {
+      color: $color-accent;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: $color-text;
+    }
+  }
+}
