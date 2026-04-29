@@ -1,0 +1,85 @@
+@use "@/styles/variables" as *;
+
+.about {
+  padding: 120px 20px;
+  background-color: $color-bg;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .imagePlaceholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: $color-primary;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid $color-accent;
+        transform: translate(20px, 20px);
+        z-index: -1;
+        border-radius: 12px;
+    }
+  }
+
+  .content {
+    .subtitle {
+      color: $color-accent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+      color: $color-text;
+    }
+
+    .stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+
+      .statItem {
+        strong {
+          display: block;
+          font-size: 2rem;
+          color: $color-primary;
+          font-family: $font-serif;
+        }
+        span {
+          font-size: 0.9rem;
+          color: $color-accent;
+        }
+      }
+    }
+  }
+}
