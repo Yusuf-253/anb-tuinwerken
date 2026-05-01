@@ -1,84 +1,126 @@
 @use "@/styles/variables" as *;
 
 .about {
-  padding: 120px 20px;
-  background-color: $color-bg;
+  padding: 120px 0;
+  background-color: #fff;
+  overflow: hidden;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-
-    @media (max-width: 968px) {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
+    padding: 0 20px;
   }
 
-  .imagePlaceholder {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background-color: $color-primary;
-    border-radius: 12px;
+  .wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.4);
-    position: relative;
-    overflow: hidden;
+    gap: 80px;
 
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid $color-accent;
-        transform: translate(20px, 20px);
-        z-index: -1;
-        border-radius: 12px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 60px;
     }
   }
 
-  .content {
+  .imageSide {
+    flex: 1;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 20px 20px 0px $color-accent;
+
+      @media (max-width: 768px) {
+        height: 400px;
+        box-shadow: 10px 10px 0px $color-accent;
+      }
+    }
+
+    .experienceBadge {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      background: $color-primary;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+      @media (max-width: 768px) {
+        right: 10px;
+        padding: 20px;
+      }
+
+      span {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+      p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+    }
+  }
+
+  .textSide {
+    flex: 1;
+
     .subtitle {
       color: $color-accent;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.8rem;
       font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
       display: block;
       margin-bottom: 1rem;
     }
 
-    h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
+    .title {
+      font-family: $font-serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: #1a2421;
+      line-height: 1.1;
+      margin-bottom: 2rem;
     }
 
-    p {
-      margin-bottom: 1.2rem;
+    .description {
+      color: #555;
       line-height: 1.8;
-      color: $color-text;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
     }
 
-    .stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 30px;
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 3.5rem;
 
-      .statItem {
-        strong {
-          display: block;
-          font-size: 2rem;
-          color: $color-primary;
-          font-family: $font-serif;
-        }
-        span {
-          font-size: 0.9rem;
-          color: $color-accent;
-        }
+      li {
+        margin-bottom: 2rem;
+        padding-left: 20px;
+        border-left: 3px solid $color-accent;
+
+        strong { display: block; font-size: 1.1rem; color: #1a2421; margin-bottom: 0.5rem; }
+        p { color: #666; font-size: 0.95rem; }
+      }
+    }
+
+    .aboutBtn {
+      background: transparent;
+      border: 2px solid $color-primary;
+      padding: 15px 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $color-primary;
+        color: white;
       }
     }
   }
