@@ -3,10 +3,30 @@ import { motion } from "framer-motion";
 import styles from "@/styles/Projects.module.scss";
 
 const projects = [
-  { id: 1, image: "/tuinfoto3.jpeg", title: "Moderne Stadstuin", category: "Renovatie" },
-  { id: 2, image: "/tuinfoto4.jpeg", title: "Ecologische Zwemvijver", category: "Totaalproject" },
-  { id: 3, image: "/tuinfoto5.jpeg", title: "Dakterras Gent", category: "Aanleg" },
-  { id: 4, image: "/tuinfoto7.png", title: "Vellen van eiken", category: "Boomverzorging" },
+  { 
+    id: 1, 
+    image: "/tuinfoto3.jpeg", 
+    title: "Nivelleren & Grondwerk", 
+    category: "Tuinaanleg" 
+  },
+  { 
+    id: 2, 
+    image: "/tuinfoto5.jpeg", 
+    title: "Bosbeheer & Opruiming", 
+    category: "Boomverzorging" 
+  },
+  { 
+    id: 3, 
+    image: "/tuinfoto4.jpeg", 
+    title: "Betonnen Afsluitingen", 
+    category: "Omheiningen" 
+  },
+  { 
+    id: 4, 
+    image: "/tuinfoto7.png", 
+    title: "Snoeien van Hoge Hagen", 
+    category: "Onderhoud" 
+  },
 ];
 
 const Projects = () => {
