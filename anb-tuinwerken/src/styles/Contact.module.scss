@@ -1,71 +1,130 @@
 @use "@/styles/variables" as *;
 
 .contact {
-  padding: 100px 20px;
-  background-color: $color-primary; // Krachtig groen
-  color: white;
+  padding: 120px 0;
+  background-color: #f9f9f9; // Zacht contrast met de witte About-sectie
 
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+    padding: 0 20px;
+  }
 
-    @media (max-width: 850px) {
-      grid-template-columns: 1fr;
+  .wrapper {
+    display: flex;
+    gap: 100px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 60px;
     }
   }
 
-  .info {
-    h2 {
-      color: white;
-      font-size: 2.5rem;
+  .infoSide {
+    flex: 1;
+
+    .subtitle {
+      color: $color-accent;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-family: $font-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #1a2421;
       margin-bottom: 1.5rem;
     }
-    p {
-      opacity: 0.8;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+
+    .description {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 3rem;
     }
-    .details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      .item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        .icon { color: $color-accent; }
+
+    .contactDetails {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+
+      @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+      }
+
+      .detailItem {
+        strong {
+          display: block;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          color: $color-accent;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: 1.1rem;
+          color: #1a2421;
+          font-weight: 600;
+        }
       }
     }
   }
 
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .formSide {
+    flex: 1.2;
     background: white;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    border-radius: 2px;
 
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
-      &:focus { outline: 2px solid $color-accent; }
+    @media (max-width: 600px) {
+      padding: 30px;
     }
 
-    button {
-      background: $color-accent;
+    .inputGroup {
+      margin-bottom: 25px;
+
+      label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $color-accent;
+        }
+      }
+    }
+
+    .submitBtn {
+      width: 100%;
+      background: $color-primary;
       color: white;
       border: none;
-      padding: 15px;
+      padding: 18px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       cursor: pointer;
-      transition: $transition-smooth;
-      &:hover { filter: brightness(1.1); }
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: $color-accent;
+      }
     }
   }
 }

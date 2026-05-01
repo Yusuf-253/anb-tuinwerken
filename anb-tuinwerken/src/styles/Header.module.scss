@@ -5,74 +5,66 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 2.5rem 0;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 25px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  .navContainer {
-    max-width: 1400px;
+  &.scrolled {
+    padding: 15px 0;
+    background: rgba(5, 8, 7, 0.8); // Matcht je hero achtergrond
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .container {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .logoWrapper {
-    background: white; // De redding voor je logo met witte achtergrond!
-    padding: 10px 20px;
-    border-radius: 0 0 8px 8px; // Alleen onderaan afgerond
-    margin-top: -40px; // Omhoog schuiven voor een "hangend" effect
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    
-    img {
-      height: 50px;
-      width: auto;
-      display: block;
-    }
+  .logo {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
-  .navLinks {
+  .nav {
     display: flex;
-    gap: 3.5rem;
+    align-items: center;
+    gap: 35px;
+
+    @media (max-width: 850px) {
+      display: none; // Voor de mobiele weergave kijken we later naar een hamburger-menu
+    }
 
     a {
-      color: white;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 700;
+      color: rgba(255, 255, 255, 0.7);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
 
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: $color-accent;
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after {
-        width: 100%;
+      &:hover {
+        color: #FFFFFF;
       }
     }
-  }
 
-  &.scrolled {
-    padding: 1rem 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-
-    .logoWrapper {
-      margin-top: -10px;
-      box-shadow: none;
-    }
-
-    .navLinks a {
-      color: $color-primary;
+    .cta {
+      background: #FFFFFF;
+      color: #050807 !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      font-weight: 800;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
     }
   }
 }
